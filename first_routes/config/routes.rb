@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :artworks
     resources :artworks, only: [:index, :show, :update, :create, :destroy]
   
+  resources :artwork_shares
+    resources :artwork_shares, only: [:index, :show, :update, :create, :destroy]
     
   # get 'users/:id', to: 'users#show', as: 'user'
   # get 'users', to: 'users#index', as: 'users'
