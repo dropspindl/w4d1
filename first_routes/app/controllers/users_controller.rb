@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if user.update(user_params)
       render json: user
     else
-      render json: user.errors.full_messages, status: 418
+      render json: user.errors.full_messages, status: 422
     end
   end
   
@@ -32,6 +32,8 @@ class UsersController < ApplicationController
     user.destroy
     render json: user
   end
+  
+  private
   
   def user_params
     params.require(:user).permit(:username)
